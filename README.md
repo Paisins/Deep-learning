@@ -15,7 +15,7 @@
 将demo.ipynb中的内容存在py文件中，放在mask_rcnn/samples下，运行后无法显示处理的图片
     
 ![](https://github.com/Paisins/Deep-learning/blob/master/Screenshot%20from%202018-12-27%2014-17-46.png)
-这个问题我不知道是不是跟没用GPU有关，或者修改配置可以解决，但是如method的中修改方法之后，也是可以将处理后的图片保存。
+这个问题我不知道是不是跟没用GPU有关，或者修改配置可以解决，但是如method2中的修改之后，也是可以将处理后的图片保存。
 ### Method 2
 后面我发现，使用jupyter notebook打开demo.ipynb后直接运行可以显示出图片来，但是凭我如何修改visualize.py文件都不能对输出结果产生影响，这让我很郁闷，也很奇怪。当我输入visualize的路径的时候，才发现它导入的根本不是我下载mask_rcnn下的visualize.py文件，所以前面的修改没有任何影响，于是我修改了导入的文件路径，终于可以保存文件了。
 #### 修改一： demo.ipynb
