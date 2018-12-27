@@ -12,9 +12,10 @@
 这个运行的时候没有什么问题，很简单，只是看下效果，处理后的图片会保存在samples/balloon/路径下
 ## Sample 1： COCO
 ### Method 1
-    将demo.ipynb中的内容存在py文件中，放在mask_rcnn/samples下，运行后无法显示处理的图片
+将demo.ipynb中的内容存在py文件中，放在mask_rcnn/samples下，运行后无法显示处理的图片
     
 ![](https://github.com/Paisins/Deep-learning/blob/master/Screenshot%20from%202018-12-27%2014-17-46.png)
+这个问题我不知道是不是跟没用GPU有关，或者修改配置可以解决，但是如method的中修改方法之后，也是可以将处理后的图片保存。
 ### Method 2
 后面我发现，使用jupyter notebook打开demo.ipynb后直接运行可以显示出图片来，但是凭我如何修改visualize.py文件都不能对输出结果产生影响，这让我很郁闷，也很奇怪。当我输入visualize的路径的时候，才发现它导入的根本不是我下载mask_rcnn下的visualize.py文件，所以前面的修改没有任何影响，于是我修改了导入的文件路径，终于可以保存文件了。
 #### 修改一： demo.ipynb
@@ -26,16 +27,16 @@
 # from mrcnn import visualize
 
 import imp
-utils = imp.load_source('utils', '/home/jcj/Documents/Mask_RCNN/mask_rcnn/mrcnn/utils.py') 
-modellib = imp.load_source('model', '/home/jcj/Documents/Mask_RCNN/mask_rcnn/mrcnn/model.py') 
-visualize = imp.load_source('visualize', '/home/jcj/Documents/Mask_RCNN/mask_rcnn/mrcnn/visualize.py') 
+utils = imp.load_source('utils', '下载后的路径/mrcnn/utils.py') 
+modellib = imp.load_source('model', '下载后的路径//mrcnn/model.py') 
+visualize = imp.load_source('visualize', '下载后的路径//mrcnn/visualize.py') 
 ```
 #### 修改二： visualize.py
 ```python
 # display_instances()
 if auto_show:
     #保存图片
-    plt.savefig("/home/jcj/Documents/Mask_RCNN/mask_rcnn/saved_picture/2.jpg")
+    plt.savefig("保存路径/文件名")
     plt.show()
 ```
 其实中间还有一个问题就是安装PyCOOtools文件，一般安装总会出各种问题，最后找到比较好的方法
