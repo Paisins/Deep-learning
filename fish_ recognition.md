@@ -16,4 +16,8 @@
 ## Parameter
 - 我是第一次接手这样的项目，虽然之前看书的时候了解了很多学习率，激活函数等东西，但是实际中并没有去调整这些参数，都是按照默认值去训练的，唯一修改的地方就是steps的值，默认值是10000，我最初设置为800，后来修改成了1400。
 ## Question
-1. 
+1. keras如何指定TPU？
+## result
+实际效果不是很好，各种鱼类很容易混淆，单条鱼比较完整的时候识别还好，但是多条重叠的鱼或者鱼只露出部分的时候，边框画的都不准确，数量也不对。也许还是数据的问题吧，毕竟人工筛选的数据集容易看错，重复的质量不好的图片会造成不好的后果。
+![](https://github.com/Paisins/Deep-learning/blob/master/4.jpg)
+![](https://github.com/Paisins/Deep-learning/blob/master/1.jpg)
