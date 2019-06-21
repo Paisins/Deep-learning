@@ -28,3 +28,4 @@ $ write name
 ```
 write: linux_user has messages disabled
 ```
+经过测试我发现，Linux上的```mesg y```完全无效，即便查看```mesg```时显示的是yes，实际上依然是关闭的，而mac上是正常的，关闭打开都有效果，到底为什么呢？
